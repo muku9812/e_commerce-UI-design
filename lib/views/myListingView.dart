@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../utilities/colors.dart';
 import '../utilities/routes/routesName.dart';
+import '../utilities/widgets/bottomNavBar.dart';
 
 class MyListingView extends StatefulWidget {
   const MyListingView({super.key});
@@ -52,7 +53,7 @@ class _MyListingViewState extends State<MyListingView> {
                       ),
                     ),
                     Text(
-                      'Liked items',
+                      'Listings items',
                       style: GoogleFonts.firaSans(
                           fontWeight: FontWeight.w700, fontSize: 32),
                     ),
@@ -105,12 +106,48 @@ class _MyListingViewState extends State<MyListingView> {
                                     fontWeight: FontWeight.w500,
                                     color: const Color(0xff616161)),
                               ),
-                              Text(
-                                '21 may 2023',
-                                style: GoogleFonts.firaSans(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                    color: const Color(0xff898989)),
+                              Row(
+                                children: [
+                                  Text(
+                                    'Views: 1K',
+                                    style: GoogleFonts.firaSans(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        color: const Color(0xff898989)),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    child: Container(
+                                      height: 20,
+                                      width: 50,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(12)),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          const Icon(
+                                            Icons.email,
+                                            size: 20,
+                                          ),
+                                          Text(
+                                            '$j',
+                                            style: GoogleFonts.firaSans(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w400),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -124,21 +161,37 @@ class _MyListingViewState extends State<MyListingView> {
                                         fontWeight: FontWeight.w600,
                                         color: const Color(0xff616161)),
                                   ),
-                                  SizedBox(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.35,
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    child: Text(
+                                      '21 may 1999',
+                                      style: GoogleFonts.firaSans(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                          color: const Color.fromARGB(
+                                              255, 179, 54, 54)),
+                                    ),
                                   ),
-                                  Container(
-                                    height: 30,
-                                    width: 30,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(15),
-                                        color: Colors.white),
-                                    child: const Center(
-                                        child: Icon(
-                                      Icons.favorite,
-                                      color: Colors.red,
-                                    )),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left:
+                                            MediaQuery.of(context).size.width *
+                                                0.05),
+                                    child: Container(
+                                      height: 30,
+                                      width: 30,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                          color: Colors.white),
+                                      child: const Center(
+                                          child: Icon(
+                                        Icons.visibility_off,
+                                      )),
+                                    ),
                                   )
                                 ],
                               )
@@ -152,7 +205,7 @@ class _MyListingViewState extends State<MyListingView> {
           ),
         ),
       ),
-      // bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

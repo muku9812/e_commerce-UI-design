@@ -28,8 +28,8 @@ class Routes {
       case RoutesName.home:
         return MaterialPageRoute(
             builder: (BuildContext context) => const HomeView());
-      case RoutesName.main:
-        return MaterialPageRoute(builder: (BuildContext context) => MainView());
+      // case RoutesName.main:
+      //   return MaterialPageRoute(builder: (BuildContext context) => MainView());
       case RoutesName.sideBar:
         return MaterialPageRoute(
             builder: (BuildContext context) => SideBarView());

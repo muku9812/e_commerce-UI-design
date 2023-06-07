@@ -11,7 +11,7 @@ class SplashServices {
     final user = auth.currentUser;
     if (user != null) {
       Timer(const Duration(seconds: 3), () {
-        Navigator.pushReplacementNamed(context, RoutesName.main);
+        Navigator.pushReplacementNamed(context, RoutesName.home);
       });
     } else {
       Timer(const Duration(seconds: 3), () {

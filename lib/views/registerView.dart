@@ -122,7 +122,7 @@ class _RegisterviewState extends State<Registerview> {
                         if (userCredential != null) {
                           Utils.toastMessage('sucessfully register');
                           Navigator.pushNamedAndRemoveUntil(
-                              context, RoutesName.main, (route) => false);
+                              context, RoutesName.home, (route) => false);
                         } else {
                           Utils.flushBarErrorMessage(
                               'Something went wrong', context);
@@ -285,7 +285,7 @@ class _RegisterviewState extends State<Registerview> {
                               .then((value) {
                             Utils.toastMessage('Registration successfull');
                             Navigator.pushNamedAndRemoveUntil(
-                                context, RoutesName.main, (route) => false);
+                                context, RoutesName.home, (route) => false);
                           }).onError((error, stackTrace) {
                             Utils.flushBarErrorMessage(
                                 error.toString(), context);

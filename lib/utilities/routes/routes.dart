@@ -6,6 +6,7 @@ import 'package:ecommerce/views/loginView.dart';
 import 'package:ecommerce/views/mainView.dart';
 import 'package:ecommerce/views/myListingView.dart';
 import 'package:ecommerce/views/myOrderView.dart';
+import 'package:ecommerce/views/productDetails.dart';
 import 'package:ecommerce/views/registerView.dart';
 import 'package:ecommerce/views/sideBar.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +49,9 @@ class Routes {
       case RoutesName.listings:
         return MaterialPageRoute(
             builder: (BuildContext context) => const MyListingView());
+      case RoutesName.details:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const ProductDetails());
 
       default:
         return MaterialPageRoute(builder: (_) {

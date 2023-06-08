@@ -10,4 +10,5 @@ class RoutesName {
   static const String explore = 'exporeView';
   static const String like = 'myLikeView';
   static const String listings = 'myListingView';
+  static const String details = 'productDetails';
 }

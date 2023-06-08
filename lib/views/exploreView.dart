@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utilities/colors.dart';
+import '../utilities/widgets/backArrow.dart';
 import '../utilities/widgets/bottomNavBar.dart';
 
 class ExploreView extends StatefulWidget {
@@ -31,22 +32,7 @@ class _ExploreViewState extends State<ExploreView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        height: 46,
-                        width: 46,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Icon(
-                          CupertinoIcons.back,
-                          size: 30,
-                        ),
-                      ),
-                    ),
+                    BackArrow(),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.07,
                     ),

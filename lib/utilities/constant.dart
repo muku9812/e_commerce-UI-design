@@ -13,3 +13,5 @@ String userImage =
     'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
 // String userImage = _auth.currentUser!.photoURL.toString();
 String userPhone = _auth.currentUser!.phoneNumber.toString();
+String googleImage =
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/588px-Google_%22G%22_Logo.svg.png';

@@ -1,4 +1,5 @@
 import 'package:ecommerce/utilities/widgets/bottomNavBar.dart';
+import 'package:ecommerce/views/productDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -141,12 +142,19 @@ class _HomeViewState extends State<HomeView> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: HomePageCard(
-                  name: 'Batman toy',
-                  image:
-                      'https://ae01.alicdn.com/kf/Hb9dfbb5469464b20af1ffe965a854718w/1-32-Beijing-JEEP-Toy-Car-Metal-Toy-Alloy-Car-Diecasts-Toy-Vehicles-Car-Model-Wolf.jpg',
-                  price: '899',
-                  date: '2018',
-                  category: 'FunSkool'),
+                name: 'Batman toy',
+                image:
+                    'https://ae01.alicdn.com/kf/Hb9dfbb5469464b20af1ffe965a854718w/1-32-Beijing-JEEP-Toy-Car-Metal-Toy-Alloy-Car-Diecasts-Toy-Vehicles-Car-Model-Wolf.jpg',
+                price: '899',
+                date: '2018',
+                category: 'FunSkool',
+                onTab: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProductDetails()));
+                },
+              ),
             ),
             Padding(
               padding:
@@ -173,12 +181,19 @@ class _HomeViewState extends State<HomeView> {
             SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: HomePageCard(
-                    name: 'Holly book',
-                    image:
-                        'https://cdn.shopify.com/s/files/1/0039/7282/5134/products/AKBA_Racism_Cover_db369bb1-d208-421c-b327-93db46fa052b.png?v=1665006228',
-                    price: '599',
-                    date: '2019',
-                    category: 'Book')),
+                  name: 'Holly book',
+                  image:
+                      'https://cdn.shopify.com/s/files/1/0039/7282/5134/products/AKBA_Racism_Cover_db369bb1-d208-421c-b327-93db46fa052b.png?v=1665006228',
+                  price: '599',
+                  date: '2019',
+                  category: 'Book',
+                  onTab: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductDetails()));
+                  },
+                )),
           ],
         ),
       ),

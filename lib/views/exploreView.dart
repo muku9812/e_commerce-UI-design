@@ -1,7 +1,7 @@
 import 'package:ecommerce/utilities/constant.dart';
 import 'package:ecommerce/utilities/routes/routesName.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utilities/colors.dart';
@@ -21,61 +21,58 @@ class _ExploreViewState extends State<ExploreView> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 64, left: 18, right: 18),
+          padding: EdgeInsets.only(top: 64.h, left: 18.w, right: 18.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 18),
+                padding: EdgeInsets.only(left: 18.w),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    BackArrow(),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.07,
-                    ),
+                    const BackArrow(),
                     Text(
                       "Explore",
                       style: GoogleFonts.firaSans(
-                          fontSize: 32, fontWeight: FontWeight.w700),
+                          fontSize: 32.sp, fontWeight: FontWeight.w700),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.3,
+                      width: MediaQuery.of(context).size.width * 0.32,
                     ),
                     GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, RoutesName.sideBar);
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.menu,
-                        size: 33,
+                        size: 33.sp,
                       ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18, top: 32),
+                padding: EdgeInsets.only(left: 18.w, right: 18.w, top: 32.h),
                 child: Container(
-                    height: 57,
-                    width: 359,
+                    height: 57.h,
+                    width: 359.w,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.r),
                         color: AppColors.signUpOptionColor),
                     child: TextField(
                       decoration: InputDecoration(
                           hintText: 'Search for book, guiter and more...',
-                          suffixIcon: const Icon(
+                          suffixIcon: Icon(
                             Icons.search,
-                            size: 30,
+                            size: 30.sp,
                           ),
                           border: OutlineInputBorder(
                               borderSide: const BorderSide(
                                 color: Colors.black38,
                               ),
-                              borderRadius: BorderRadius.circular(22))),
+                              borderRadius: BorderRadius.circular(22.r))),
                     )),
               ),
               SingleChildScrollView(
@@ -86,21 +83,21 @@ class _ExploreViewState extends State<ExploreView> {
                   children: [
                     for (int i = 0; i <= 10; i++)
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 18, horizontal: 4),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 18.h, horizontal: 4.w),
                         child: Container(
-                          height: 30,
-                          width: 95,
+                          height: 32.h,
+                          width: 95.w,
                           decoration: BoxDecoration(
-                              color: Color(0xff3C3C3C),
-                              borderRadius: BorderRadius.circular(12)),
+                              color: const Color(0xff3C3C3C),
+                              borderRadius: BorderRadius.circular(12.r)),
                           child: Center(
                             child: Text(
                               'Books',
                               style: GoogleFonts.firaSans(
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: Color(0xffE2E2E2)),
+                                  color: const Color(0xffE2E2E2)),
                             ),
                           ),
                         ),
@@ -113,24 +110,23 @@ class _ExploreViewState extends State<ExploreView> {
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: Container(
-                      height: 431,
-                      width: 377,
+                      height: 431.h,
+                      width: 377.w,
                       decoration: const BoxDecoration(
                           color: AppColors.sidebarItemColor),
                       child: Column(
                         children: [
                           Container(
                             color: Colors.white,
-                            height: 58,
+                            height: 58.h,
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8.0),
+                              padding: EdgeInsets.symmetric(horizontal: 8.w),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.all(4.0),
+                                    padding: EdgeInsets.all(4.0.sp),
                                     child: CircleAvatar(
                                       backgroundImage: NetworkImage(userImage),
                                     ),
@@ -144,13 +140,13 @@ class _ExploreViewState extends State<ExploreView> {
                                         'Cliff Hanger',
                                         style: GoogleFonts.firaSans(
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 15),
+                                            fontSize: 15.sp),
                                       ),
                                       Text(
                                         'El Dorado',
                                         style: GoogleFonts.firaSans(
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 13),
+                                            fontSize: 13.sp),
                                       ),
                                     ],
                                   ),
@@ -167,27 +163,27 @@ class _ExploreViewState extends State<ExploreView> {
                             ),
                           ),
                           Container(
-                            height: 298,
-                            width: 377,
+                            height: 298.h,
+                            width: 377.w,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
                                         'https://i.pinimg.com/750x/fa/96/6f/fa966f2794f277078e9f0379efdfb1bc.jpg'),
                                     fit: BoxFit.fill)),
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0.sp),
                               child: Align(
                                 alignment: Alignment.bottomRight,
                                 child: Container(
-                                  height: 36.48,
-                                  width: 36.48,
+                                  height: 36.48.h,
+                                  width: 36.48.w,
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: AppColors.signUpOptionColor
                                           .withOpacity(0.7)),
-                                  child: const Icon(
+                                  child: Icon(
                                     Icons.favorite_outline,
-                                    size: 21.9,
+                                    size: 21.9.sp,
                                     color: Colors.red,
                                   ),
                                 ),
@@ -195,13 +191,12 @@ class _ExploreViewState extends State<ExploreView> {
                             ),
                           ),
                           Container(
-                            height: 75,
+                            height: 75.h,
                             decoration: const BoxDecoration(
                               color: Colors.white,
                             ),
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8),
+                              padding: EdgeInsets.symmetric(horizontal: 8.w),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -215,7 +210,7 @@ class _ExploreViewState extends State<ExploreView> {
                                       Text(
                                         'Cordoba Mini Guiter',
                                         style: GoogleFonts.firaSans(
-                                            fontSize: 24,
+                                            fontSize: 24.sp,
                                             fontWeight: FontWeight.w500),
                                       ),
                                       Row(
@@ -227,21 +222,21 @@ class _ExploreViewState extends State<ExploreView> {
                                           Text(
                                             'Make: Cordoba',
                                             style: GoogleFonts.firaSans(
-                                                fontSize: 14,
+                                                fontSize: 14.sp,
                                                 fontWeight: FontWeight.w400,
-                                                color: Color(0xff747474)),
+                                                color: const Color(0xff747474)),
                                           ),
                                           Text(
                                             '|',
                                             style: GoogleFonts.firaSans(
-                                                fontSize: 14,
+                                                fontSize: 14.sp,
                                                 fontWeight: FontWeight.w400,
                                                 color: Color(0xff747474)),
                                           ),
                                           Text(
                                             'Year:2020',
                                             style: GoogleFonts.firaSans(
-                                                fontSize: 14,
+                                                fontSize: 14.sp,
                                                 fontWeight: FontWeight.w400,
                                                 color: Color(0xff747474)),
                                           )
@@ -252,7 +247,7 @@ class _ExploreViewState extends State<ExploreView> {
                                   Text(
                                     '₹ 25,000',
                                     style: GoogleFonts.firaSans(
-                                        fontSize: 24,
+                                        fontSize: 24.sp,
                                         fontWeight: FontWeight.w600),
                                   )
                                 ],

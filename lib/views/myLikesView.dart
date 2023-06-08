@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,22 +17,22 @@ class MyLikeList extends StatefulWidget {
 
 class _MyLikeListState extends State<MyLikeList> {
   List<String> image = [
-    'https://s.hdnux.com/photos/01/32/65/34/23811845/3/1200x0.jpg',
-    'https://cdn.mos.cms.futurecdn.net/25Hj7D6Hni9q4BJtfhwY3W.jpg',
-    'https://i.ytimg.com/vi/ZH7dIxVf5uE/hqdefault.jpg',
+    'https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/1234041283631',
+    'https://www.ikea.com/ph/en/images/products/jaettestor-soft-toy-elephant-gray__0710185_pe727388_s5.jpg?f=s',
+    'https://cdn.monsterjam.com/s3fs-public/778988548264_0.jpg',
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 64, left: 32, right: 28),
+          padding: EdgeInsets.only(top: 64.h, left: 32.w, right: 28.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(bottom: 32),
+                padding: EdgeInsets.only(bottom: 32.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,30 +42,30 @@ class _MyLikeListState extends State<MyLikeList> {
                         Navigator.pop(context);
                       },
                       child: Container(
-                        height: 46,
-                        width: 46,
+                        height: 46.h,
+                        width: 46.w,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                         ),
-                        child: const Icon(
+                        child: Icon(
                           CupertinoIcons.back,
-                          size: 30,
+                          size: 30.sp,
                         ),
                       ),
                     ),
                     Text(
                       'Liked items',
                       style: GoogleFonts.firaSans(
-                          fontWeight: FontWeight.w700, fontSize: 32),
+                          fontWeight: FontWeight.w700, fontSize: 32.sp),
                     ),
                     GestureDetector(
                       onTap: () {
                         Navigator.pushNamed(context, RoutesName.sideBar);
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.menu,
-                        size: 33,
+                        size: 33.sp,
                       ),
                     ),
                   ],
@@ -75,22 +76,22 @@ class _MyLikeListState extends State<MyLikeList> {
                   Padding(
                     padding: const EdgeInsets.only(top: 6, bottom: 9),
                     child: Container(
-                      height: 114,
-                      width: 349,
+                      height: 114.h,
+                      width: 349.w,
                       decoration: BoxDecoration(
                           color: AppColors.sidebarItemColor,
-                          borderRadius: BorderRadius.circular(20)),
+                          borderRadius: BorderRadius.circular(20.r)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0.sp),
                             child: Container(
-                              height: 90,
-                              width: 90,
+                              height: 90.h,
+                              width: 90.w,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
+                                  borderRadius: BorderRadius.circular(15.r),
                                   image: DecorationImage(
                                       image: NetworkImage(image[i]),
                                       fit: BoxFit.fill)),
@@ -101,18 +102,18 @@ class _MyLikeListState extends State<MyLikeList> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                'Apple Airpods pro',
+                                'Toys for kid',
                                 style: GoogleFonts.firaSans(
-                                    fontSize: 18,
+                                    fontSize: 18.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: Color(0xff616161)),
+                                    color: const Color(0xff616161)),
                               ),
                               Text(
                                 '21 may 2023',
                                 style: GoogleFonts.firaSans(
-                                    fontSize: 18,
+                                    fontSize: 18.sp,
                                     fontWeight: FontWeight.w400,
-                                    color: Color(0xff898989)),
+                                    color: const Color(0xff898989)),
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -120,7 +121,7 @@ class _MyLikeListState extends State<MyLikeList> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '₹ 8,999',
+                                    '₹ 999',
                                     style: GoogleFonts.firaSans(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w600,
@@ -131,12 +132,12 @@ class _MyLikeListState extends State<MyLikeList> {
                                         0.35,
                                   ),
                                   Container(
-                                    height: 30,
-                                    width: 30,
+                                    height: 30.h,
+                                    width: 30.w,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(15),
                                         color: Colors.white),
-                                    child: Center(
+                                    child: const Center(
                                         child: Icon(
                                       Icons.favorite,
                                       color: Colors.red,
@@ -154,7 +155,7 @@ class _MyLikeListState extends State<MyLikeList> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

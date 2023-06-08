@@ -1,6 +1,7 @@
 import 'package:ecommerce/utilities/colors.dart';
 import 'package:ecommerce/utilities/constant.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 
@@ -22,20 +23,20 @@ class _MyAccountViewState extends State<MyAccountView> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 75, left: 32, right: 28),
+          padding: EdgeInsets.only(top: 75.h, left: 32.w, right: 28.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 53),
+                padding: EdgeInsets.only(bottom: 53.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      height: 96,
-                      width: 96,
+                      height: 96.h,
+                      width: 96.h,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.black, width: 2)),
@@ -51,12 +52,12 @@ class _MyAccountViewState extends State<MyAccountView> {
                         Text(
                           userFullName,
                           style: GoogleFonts.firaSans(
-                              fontSize: 24, fontWeight: FontWeight.w500),
+                              fontSize: 24.sp, fontWeight: FontWeight.w500),
                         ),
                         Text(
                           useremail,
                           style: GoogleFonts.firaSans(
-                              fontSize: 14, fontWeight: FontWeight.w300),
+                              fontSize: 14.sp, fontWeight: FontWeight.w300),
                         ),
                       ],
                     ),
@@ -64,47 +65,47 @@ class _MyAccountViewState extends State<MyAccountView> {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: const Icon(
+                      child: Icon(
                         Ionicons.close_outline,
-                        size: 50,
+                        size: 50.sp,
                       ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.sp),
                 child: Text(
                   'My Account',
                   style: GoogleFonts.firaSans(
-                      fontWeight: FontWeight.w700, fontSize: 24),
+                      fontWeight: FontWeight.w700, fontSize: 24.sp),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 6, left: 8),
+                padding: EdgeInsets.only(top: 8.h, bottom: 6.h, left: 8.w),
                 child: Text(
                   'Name:-',
                   style: GoogleFonts.firaSans(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
                       color: const Color(0xff3c3c3c)),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding: EdgeInsets.only(bottom: 8.h),
                 child: Container(
-                  height: 43,
-                  width: 349,
+                  height: 43.h,
+                  width: 349.w,
                   decoration: BoxDecoration(
                       color: AppColors.signUpOptionColor,
-                      borderRadius: BorderRadius.circular(15)),
+                      borderRadius: BorderRadius.circular(15.r)),
                   child: TextFormField(
                     controller: nameController,
                     decoration: InputDecoration(
                       suffixIcon: const Icon(Ionicons.create_outline),
                       hintText: userFullName,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.r),
                         borderSide: const BorderSide(color: Colors.black),
                       ),
                     ),
@@ -112,30 +113,30 @@ class _MyAccountViewState extends State<MyAccountView> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 6, left: 8),
+                padding: EdgeInsets.only(top: 8.h, bottom: 6.h, left: 8.w),
                 child: Text(
                   'Email:-',
                   style: GoogleFonts.firaSans(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
                       color: const Color(0xff3c3c3c)),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding: EdgeInsets.only(bottom: 8.h),
                 child: Container(
-                  height: 43,
-                  width: 349,
+                  height: 43.h,
+                  width: 349.w,
                   decoration: BoxDecoration(
                       color: AppColors.signUpOptionColor,
-                      borderRadius: BorderRadius.circular(15)),
+                      borderRadius: BorderRadius.circular(15.r)),
                   child: TextFormField(
                     controller: emailController,
                     decoration: InputDecoration(
                       suffixIcon: const Icon(Ionicons.create_outline),
                       hintText: useremail,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.r),
                         borderSide: const BorderSide(color: Colors.black),
                       ),
                     ),
@@ -143,29 +144,29 @@ class _MyAccountViewState extends State<MyAccountView> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 6, left: 8),
+                padding: EdgeInsets.only(top: 8.h, bottom: 6.h, left: 8.w),
                 child: Text(
                   'Phone:-',
                   style: GoogleFonts.firaSans(
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
                       color: const Color(0xff3c3c3c)),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 32),
+                padding: EdgeInsets.only(bottom: 32.h),
                 child: Container(
-                  height: 43,
-                  width: 349,
+                  height: 43.h,
+                  width: 349.w,
                   decoration: BoxDecoration(
                       color: AppColors.signUpOptionColor,
-                      borderRadius: BorderRadius.circular(15)),
+                      borderRadius: BorderRadius.circular(15.r)),
                   child: TextFormField(
                     decoration: InputDecoration(
                       suffixIcon: const Icon(Ionicons.create_outline),
                       hintText: userPhone,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.r),
                         borderSide: const BorderSide(color: Colors.black),
                       ),
                     ),
@@ -177,18 +178,18 @@ class _MyAccountViewState extends State<MyAccountView> {
                 width: 165,
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(15)),
+                    borderRadius: BorderRadius.circular(15.r)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const Icon(Icons.settings),
                     Padding(
-                      padding: const EdgeInsets.only(left: 5),
+                      padding: EdgeInsets.only(left: 5.w),
                       child: Text(
                         'Settings',
                         style: GoogleFonts.firaSans(
-                            fontSize: 18, fontWeight: FontWeight.w500),
+                            fontSize: 18.sp, fontWeight: FontWeight.w500),
                       ),
                     )
                   ],

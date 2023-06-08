@@ -11,4 +11,5 @@ class RoutesName {
   static const String like = 'myLikeView';
   static const String listings = 'myListingView';
   static const String details = 'productDetails';
+  static const String purchases = 'purchasesForm';
 }

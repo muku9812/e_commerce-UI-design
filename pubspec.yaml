@@ -45,6 +45,7 @@ dependencies:
   ionicons: ^0.2.2
   image_picker: ^0.8.7+5
   readmore: ^2.2.0
+  flutter_screenutil: ^5.7.0
 
 dev_dependencies:
   flutter_test:

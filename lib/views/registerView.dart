@@ -121,9 +121,11 @@ class _RegisterviewState extends State<Registerview> {
                             await signUpWithGoogle();
                         if (userCredential != null) {
                           Utils.toastMessage('sucessfully register');
+                          // ignore: use_build_context_synchronously
                           Navigator.pushNamedAndRemoveUntil(
                               context, RoutesName.home, (route) => false);
                         } else {
+                          // ignore: use_build_context_synchronously
                           Utils.flushBarErrorMessage(
                               'Something went wrong', context);
                         }

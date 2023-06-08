@@ -1,6 +1,7 @@
 import 'package:ecommerce/utilities/widgets/bottomNavBar.dart';
 import 'package:ecommerce/views/productDetails.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utilities/colors.dart';
@@ -23,15 +24,15 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(
-                  top: 52, bottom: 37, left: 27, right: 28),
+              padding: EdgeInsets.only(
+                  top: 52.h, bottom: 37.h, left: 27.w, right: 28.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 90,
-                    width: 86,
+                    height: 90.h,
+                    width: 86.w,
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
@@ -41,22 +42,22 @@ class _HomeViewState extends State<HomeView> {
                               border:
                                   Border.all(color: Colors.black, width: 3)),
                           child: CircleAvatar(
-                            radius: 40,
+                            radius: 40.r,
                             backgroundImage: NetworkImage(userImage),
                           ),
                         ),
                         Positioned(
-                            bottom: 0,
-                            right: 0,
+                            bottom: 0.h,
+                            right: 0.w,
                             child: CircleAvatar(
-                              radius: 15,
+                              radius: 15.r,
                               backgroundColor: AppColors.signUpOptionColor,
                               child: GestureDetector(
                                 onTap: () {
                                   Navigator.pushNamed(
                                       context, RoutesName.account);
                                 },
-                                child: Icon(
+                                child: const Icon(
                                   Icons.menu,
                                   color: Colors.grey,
                                 ),
@@ -69,7 +70,7 @@ class _HomeViewState extends State<HomeView> {
                     text: TextSpan(
                       text: 'Hey $userName',
                       style: GoogleFonts.firaSans(
-                        fontSize: 32,
+                        fontSize: 32.sp,
                         fontWeight: FontWeight.w800,
                         color: Colors.black,
                       ),
@@ -78,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
                           text: '\nWelcome back!',
                           style: GoogleFonts.firaSans(
                             fontWeight: FontWeight.normal,
-                            fontSize: 24,
+                            fontSize: 24.sp,
                             color: Colors.red,
                           ),
                         ),
@@ -89,9 +90,9 @@ class _HomeViewState extends State<HomeView> {
                     onTap: () {
                       Navigator.pushNamed(context, RoutesName.sideBar);
                     },
-                    child: const Icon(
+                    child: Icon(
                       Icons.menu,
-                      size: 33,
+                      size: 34.sp,
                       color: Colors.black,
                     ),
                   )
@@ -99,27 +100,27 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             Container(
-                height: 57,
-                width: 359,
+                height: 57.h,
+                width: 359.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: AppColors.signUpOptionColor),
                 child: TextField(
                   decoration: InputDecoration(
                       hintText: 'Search for book, guiter and more...',
-                      suffixIcon: const Icon(
+                      suffixIcon: Icon(
                         Icons.search,
-                        size: 30,
+                        size: 30.sp,
                       ),
                       border: OutlineInputBorder(
                           borderSide: const BorderSide(
                             color: Colors.black38,
                           ),
-                          borderRadius: BorderRadius.circular(15))),
+                          borderRadius: BorderRadius.circular(15.r))),
                 )),
             Padding(
-              padding:
-                  const EdgeInsets.only(top: 30, bottom: 4, left: 5, right: 5),
+              padding: EdgeInsets.only(
+                  top: 30.h, bottom: 4.h, left: 5.w, right: 5.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,12 +128,12 @@ class _HomeViewState extends State<HomeView> {
                   Text(
                     'New arrivals',
                     style: GoogleFonts.firaSans(
-                        fontSize: 24, fontWeight: FontWeight.w700),
+                        fontSize: 24.sp, fontWeight: FontWeight.w700),
                   ),
                   Text(
                     'view more',
                     style: GoogleFonts.firaSans(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xff898989)),
                   ),
@@ -157,8 +158,8 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             Padding(
-              padding:
-                  const EdgeInsets.only(top: 30, bottom: 4, left: 5, right: 5),
+              padding: EdgeInsets.only(
+                  top: 30.h, bottom: 4.h, left: 5.w, right: 5.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,12 +167,12 @@ class _HomeViewState extends State<HomeView> {
                   Text(
                     'Recently viewed',
                     style: GoogleFonts.firaSans(
-                        fontSize: 24, fontWeight: FontWeight.w700),
+                        fontSize: 24.sp, fontWeight: FontWeight.w700),
                   ),
                   Text(
                     'view more',
                     style: GoogleFonts.firaSans(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: const Color(0xff898989)),
                   ),
@@ -191,13 +192,13 @@ class _HomeViewState extends State<HomeView> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ProductDetails()));
+                            builder: (context) => const ProductDetails()));
                   },
                 )),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

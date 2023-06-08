@@ -12,6 +12,7 @@ import 'package:ecommerce/views/sideBar.dart';
 import 'package:flutter/material.dart';
 
 import '../../views/myLikesView.dart';
+import '../../views/purchasesForm.dart';
 import '../../views/splashView.dart';
 
 class Routes {
@@ -52,6 +53,9 @@ class Routes {
       case RoutesName.details:
         return MaterialPageRoute(
             builder: (BuildContext context) => const ProductDetails());
+      case RoutesName.purchases:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const PurchasesForm());
 
       default:
         return MaterialPageRoute(builder: (_) {

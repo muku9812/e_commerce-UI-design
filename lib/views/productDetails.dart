@@ -1,3 +1,4 @@
+import 'package:ecommerce/utilities/routes/routesName.dart';
 import 'package:ecommerce/utilities/widgets/backArrow.dart';
 import 'package:ecommerce/utilities/widgets/homePageCard.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             child: Icon(
                           Ionicons.chatbox_outline,
                           color: Colors.white,
-                          size: 22,
+                          size: 26,
                         )),
                       ),
                     ),
@@ -178,7 +179,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       style: GoogleFonts.firaSans(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
-                          color: Color(0xff4F4F4F)),
+                          color: const Color(0xff4F4F4F)),
                     ),
                     const Icon(
                       Icons.done,
@@ -242,7 +243,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   style: GoogleFonts.firaSans(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
-                      color: Color(0xff000000)),
+                      color: const Color(0xff000000)),
                 ),
               ),
               SingleChildScrollView(
@@ -251,14 +252,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                     name: 'Tablet',
                     image:
                         'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6502/6502014_sd.jpg',
-                    price: '19999',
+                    price: '19,999',
                     date: '2023',
                     category: 'Electronics',
                     onTab: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProductDetails()));
+                              builder: (context) => const ProductDetails()));
                     }),
               )
             ],
@@ -274,27 +275,32 @@ class _ProductDetailsState extends State<ProductDetails> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width * 0.5,
-              color: Color(0xff727272),
+              color: const Color(0xff727272),
               child: Center(
                 child: Text(
                   'Save item',
                   style: GoogleFonts.firaSans(
                       fontSize: 24,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xffECECEC)),
+                      color: const Color(0xffECECEC)),
                 ),
               ),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.5,
-              color: Color(0xffFF5A5F),
-              child: Center(
-                child: Text(
-                  'Buy Now',
-                  style: GoogleFonts.firaSans(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xffECECEC)),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, RoutesName.purchases);
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.5,
+                color: const Color(0xffFF5A5F),
+                child: Center(
+                  child: Text(
+                    'Buy Now',
+                    style: GoogleFonts.firaSans(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xffECECEC)),
+                  ),
                 ),
               ),
             )

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BackArrow extends StatelessWidget {
   const BackArrow({
@@ -13,14 +14,14 @@ class BackArrow extends StatelessWidget {
         Navigator.pop(context);
       },
       child: Container(
-        height: 46,
-        width: 46,
+        height: 46.h,
+        width: 46.h,
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black),
-            borderRadius: BorderRadius.circular(10)),
-        child: const Icon(
+            borderRadius: BorderRadius.circular(10.r)),
+        child: Icon(
           CupertinoIcons.back,
-          size: 30,
+          size: 30.sp,
         ),
       ),
     );

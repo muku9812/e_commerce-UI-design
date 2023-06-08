@@ -1,12 +1,27 @@
+// ignore_for_file: deprecated_member_use
+
+import 'dart:io';
+
+import 'package:ecommerce/utilities/routes/routesName.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../controller/mainscreenProvider.dart';
 import 'bottomNavWidget.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
+  Future<void> _takePhoto() async {
+    final picker = ImagePicker();
+    final pickedImage = await picker.getImage(source: ImageSource.camera);
+
+    if (pickedImage != null) {
+      File imageFile = File(pickedImage.path);
+      // Process or display the captured image as needed
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +44,7 @@ class BottomNavBar extends StatelessWidget {
             children: [
               BotomNavWidget(
                 onTap: () {
+                  Navigator.pushNamed(context, RoutesName.home);
                   mainScreenNotifier.pageIndex = 0;
                 },
                 icon: mainScreenNotifier.pageIndex == 0
@@ -37,6 +53,7 @@ class BottomNavBar extends StatelessWidget {
               ),
               BotomNavWidget(
                   onTap: () {
+                    Navigator.pushNamed(context, RoutesName.explore);
                     mainScreenNotifier.pageIndex = 1;
                   },
                   icon: mainScreenNotifier.pageIndex == 1
@@ -44,6 +61,7 @@ class BottomNavBar extends StatelessWidget {
                       : Icons.explore_outlined),
               BotomNavWidget(
                 onTap: () {
+                  _takePhoto();
                   mainScreenNotifier.pageIndex = 2;
                 },
                 icon: mainScreenNotifier.pageIndex == 2
@@ -53,6 +71,7 @@ class BottomNavBar extends StatelessWidget {
               BotomNavWidget(
                 onTap: () {
                   mainScreenNotifier.pageIndex = 3;
+                  Navigator.pushNamed(context, RoutesName.like);
                 },
                 icon: mainScreenNotifier.pageIndex == 3
                     ? Ionicons.heart

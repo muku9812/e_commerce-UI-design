@@ -154,7 +154,7 @@ class _MyLikeListState extends State<MyLikeList> {
           ),
         ),
       ),
-      // bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

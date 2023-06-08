@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utilities/colors.dart';
+import '../utilities/widgets/backArrow.dart';
+import '../utilities/widgets/bottomNavBar.dart';
 
 class ExploreView extends StatefulWidget {
   const ExploreView({super.key});
@@ -30,22 +32,7 @@ class _ExploreViewState extends State<ExploreView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        // Navigator.pushNamed(context, RoutesName.main);
-                      },
-                      child: Container(
-                        height: 46,
-                        width: 46,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Icon(
-                          CupertinoIcons.back,
-                          size: 30,
-                        ),
-                      ),
-                    ),
+                    BackArrow(),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.07,
                     ),
@@ -185,20 +172,22 @@ class _ExploreViewState extends State<ExploreView> {
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
-                                        'https://media.karousell.com/media/photos/products/2021/1/17/guiter_1610895000_3c97d761.jpg'),
+                                        'https://i.pinimg.com/750x/fa/96/6f/fa966f2794f277078e9f0379efdfb1bc.jpg'),
                                     fit: BoxFit.fill)),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Align(
                                 alignment: Alignment.bottomRight,
                                 child: Container(
+                                  height: 36.48,
+                                  width: 36.48,
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: AppColors.signUpOptionColor
                                           .withOpacity(0.7)),
                                   child: const Icon(
                                     Icons.favorite_outline,
-                                    size: 30,
+                                    size: 21.9,
                                     color: Colors.red,
                                   ),
                                 ),
@@ -279,6 +268,7 @@ class _ExploreViewState extends State<ExploreView> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

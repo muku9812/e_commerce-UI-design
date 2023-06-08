@@ -122,7 +122,7 @@ class _LoginViewState extends State<LoginView> {
                         if (userCredential != null) {
                           // ignore: use_build_context_synchronously
                           Navigator.pushNamedAndRemoveUntil(
-                              context, RoutesName.main, (route) => false);
+                              context, RoutesName.home, (route) => false);
                           Utils.toastMessage('Login successful');
                         } else {
                           // ignore: use_build_context_synchronously
@@ -139,8 +139,7 @@ class _LoginViewState extends State<LoginView> {
                         ),
                         child: Center(
                             child: Image(
-                          image: const NetworkImage(
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/588px-Google_%22G%22_Logo.svg.png'),
+                          image: NetworkImage(googleImage),
                           height: height * 0.04,
                         )),
                       ),
@@ -262,7 +261,7 @@ class _LoginViewState extends State<LoginView> {
                                   emailController.text, passwordController.text)
                               .then((value) {
                             Navigator.pushNamedAndRemoveUntil(
-                                    context, RoutesName.main, (route) => false)
+                                    context, RoutesName.home, (route) => false)
                                 .onError((error, stackTrace) {
                               Utils.flushBarErrorMessage(
                                   error.toString(), context);
